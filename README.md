@@ -20,6 +20,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/mai
 getgenv().SouthBronxBypass = nil
 getgenv().Erlc = nil
 getgenv().ExtraProtectionLayerERLC = nil
+getgenv().ScpRolePlayer
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/main/BypassAwaken"))() 
 
 ```
