@@ -1,0 +1,11 @@
+local LoggedScripts = {};
+
+local Idx;
+Idx = hookmetamethod(game, "__index", newcclosure(function(self, Field)
+   if (Field == "WalkSpeed" and not LoggedScripts[getcallingscript()]) then
+       local CallingScript = getcallingscript();
+       LoggedScripts[CallingScript] = true;
+       debug.setconstant(3, 10, math.huge - 16);
+   end;
+   return Idx(self, Field);
+end));
