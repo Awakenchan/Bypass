@@ -15,11 +15,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/mai
 
 ## 📜 Usage
 ```lua
---SideNote: getgenv().SouthBronxBypass & getgenv().Erlc Default values are set to false
+--SideNote: Default values are set to false
 
 getgenv().SouthBronxBypass = nil
 getgenv().Erlc = nil
 getgenv().ExtraProtectionLayerERLC = nil
 getgenv().ScpRolePlayer = nil
+getgenv().ZOSAMURAI = nil
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/main/BypassAwaken"))() 
 ```
