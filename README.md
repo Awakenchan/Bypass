@@ -21,6 +21,5 @@ getgenv().SouthBronxBypass = nil
 getgenv().Erlc = nil
 getgenv().ExtraProtectionLayerERLC = nil
 getgenv().ScpRolePlayer = nil
-getgenv().ZOSAMURAI = nil
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/main/BypassAwaken"))() 
 ```
