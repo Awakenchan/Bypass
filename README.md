@@ -14,12 +14,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/mai
 <br/>
 
 ## 📜 Usage
-```lua
---SideNote: Default values are set to false
-
-getgenv().SouthBronxBypass = nil
-getgenv().Erlc = nil
-getgenv().ExtraProtectionLayerERLC = nil
-getgenv().ScpRolePlayer = nil
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/main/BypassAwaken"))() 
-```
+**Select the bypass you wana load via gui**
