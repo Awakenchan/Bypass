@@ -43,11 +43,25 @@ Main.Slider({
 	Max = 500,
 	Def = 50
 })
+if game.PlaceId == 13643807539 then
+Main.Toggle({
+	Text = "[South bronx]: Load with fly bypass.",
+	Callback = function(value)
+        getgenv().fly = value
+	end,
+	Enabled = false
+})
+end
 Main.Dropdown({
 	Text = "Load Bypass.",
 	Callback = function(Sel)
 		if Sel == "South Bronx" then
-            loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/southbronx"))()
+			if getgenv().fly then
+				getgenv().fly = true
+				loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/southbronx"))()
+			else
+				loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/southbronx"))()
+			end
         elseif Sel == "Erlc" then
             loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/erlcbypass"))()
         elseif Sel == "Universal" then
