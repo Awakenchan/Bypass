@@ -1,1 +1,74 @@
-warn("// [Awaken]: im shutting down this bypass library, if you wish to use any of the bypass for your personal hubs dm me.")
+local Success, Error = pcall(function()
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+----------------𝐒𝐜𝐫𝐢𝐩𝐭 𝐈𝐧𝐬𝐢𝐝𝐞𝐬-----------------------------
+local X = Material.Load({
+	Title = "awakenkn",
+	Style = 3,
+	SizeX = 500,
+	SizeY = 400,
+	Theme = "Dark",
+})
+
+local Main = X.New({
+	Title = "Main"
+})
+
+Main.Toggle({
+	Text = "Enable rest button",
+	Callback = function(value)
+        getgenv().resetbutton = value
+        while getgenv().resetbutton do task.wait()
+            pcall(function()
+                game:GetService("StarterGui"):SetCore("ResetButtonCallback", true)
+            end)
+        end
+	end,
+	Enabled = false
+})
+Main.Slider({
+	Text = "WalkSpeed",
+	Callback = function(value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 16
+})
+Main.Slider({
+	Text = "JumpPower",
+	Callback = function(value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 50
+})
+Main.Dropdown({
+	Text = "Load Bypass.",
+	Callback = function(Sel)
+		if Sel == "South Bronx" then
+            loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/southbronx"))()
+        elseif Sel == "Erlc" then
+            loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/erlcbypass"))()
+        elseif Sel == "Universal" then
+            loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/universalbypass"))()
+        end
+	end,
+	Options = {
+        'South Bronx',
+        'Erlc',
+        'Universal',
+	},
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Select the bypass you wana load."
+			})
+		end
+	}
+})
+
+end)
+if not Success then 
+	print(Error)
+end
