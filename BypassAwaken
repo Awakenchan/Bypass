@@ -52,11 +52,14 @@ Main.Dropdown({
             loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/erlcbypass"))()
         elseif Sel == "Universal" then
             loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/universalbypass"))()
+        elseif Sel == "Scp Role Play" then
+            loadstring(game:HttpGet("https://awakenrobloxscripts.000webhostapp.com/scpbypass"))()
         end
 	end,
 	Options = {
         'South Bronx',
         'Erlc',
+        'Scp Role Play',
         'Universal',
 	},
 	Menu = {
