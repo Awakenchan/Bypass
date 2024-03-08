@@ -15,3 +15,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Awakenchan/Bypass/mai
 
 ## 📜 Usage
 **Select the bypass you wana load via gui**
+https://i.imgur.com/Auhqwvm.png
