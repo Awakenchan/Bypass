@@ -5,7 +5,7 @@
 
 # Bypasses
 ## 🤠 Features
-- Multi Bypass with varibale load system
+- Gui based load system with bypasses dropdown selection.
 
 <br/>
 
