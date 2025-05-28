@@ -1,4 +1,5 @@
 type = typeof or type
+
 local str_types = {
     ['boolean'] = true,
     ['userdata'] = true,
@@ -13,7 +14,6 @@ local function count_table(t)
     for _, _ in t do
         c += 1
     end
-
     return c
 end
 
@@ -36,7 +36,6 @@ end
 
 local function format_value(v)
     local typ = type(v)
-
     if str_types[typ] then
         return string_ret(v, typ)
     elseif typ == 'string' then
@@ -46,6 +45,10 @@ local function format_value(v)
     else
         return typ..'.new(' .. tostring(v) .. ')'
     end
+end
+
+local function is_nan_inf(n)
+    return type(n) == 'number' and (n ~= n or n == math.huge or n == -math.huge)
 end
 
 local function serialize_table(t, p, c, s)
@@ -59,6 +62,9 @@ local function serialize_table(t, p, c, s)
     s = s or string.rep
 
     local function format_value(v)
+        if is_nan_inf(v) then
+            return 'nil'
+        end
         local typ = typeof(v)
         if typ == "function" then
             local info = debug.getinfo(v)
@@ -73,6 +79,9 @@ local function serialize_table(t, p, c, s)
     end
 
     local function localized_format(v, is_table)
+        if is_nan_inf(v) then
+            return 'nil'
+        end
         return (is_table and (c[v][2] >= p)) and serialize_table(v, p + 1, c, s) or format_value(v)
     end
 
@@ -87,4 +96,5 @@ local function serialize_table(t, p, c, s)
 
     return ('{' .. (e and '\n' or '')) .. str .. (e and s('  ', p - 1) or '') .. '}'
 end
+
 return serialize_table
